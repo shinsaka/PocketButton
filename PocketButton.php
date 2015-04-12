@@ -11,11 +11,15 @@ if (!defined('MEDIAWIKI')) {
 $wgHooks['OutputPageBeforeHTML'][] = array(new PocketButton(), 'renderPocketButton');
 
 $wgExtensionCredits['parserhook'][] = array(
-        'name'           => 'PocketButton',
-        'author'         => 'Manabu Shinsaka',
-        'url'            => 'http://mediawiki.org/wiki/Extension:PocketButton',
-        'descriptionmsg' => 'PocketButton',
+        'path' => __FILE__,
+        'name' => 'PocketButton',
+        'author' => '[http://github.com/shinsaka Manabu Shinsaka]',
+        'url' => 'https://www.mediawiki.org/wiki/Extension:PocketButton',
+        'descriptionmsg' => 'pocketbutton-desc',
+        'version'  => 1.0,
+        'license-name' => 'GPLv2+',
 );
+$wgExtensionMessagesFiles['PocketButton'] =  dirname(__FILE__) . '/PocketButton.i18n.php';
 
 class PocketButton
 {
